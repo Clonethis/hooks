@@ -1,5 +1,6 @@
 import React from "react";
-items = {
+import Accordion from "./Accordion";
+const items = {
   0: {
     heading: "I like boobs",
     text: "lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem ",
@@ -18,6 +19,10 @@ items = {
   },
 };
 const App = (props) => {
-  <Accordion items={items} />;
+  return (
+    <div>
+      <Accordion items={items} />
+    </div>
+  );
 };
 export default App;
