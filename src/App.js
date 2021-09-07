@@ -1,23 +1,24 @@
 import React from "react";
 import Accordion from "./Accordion";
-const items = {
-  0: {
-    heading: "I like boobs",
+// Must be array not
+const items = [
+  {
+    heading: "I like big boobs",
     text: "lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem ",
   },
-  1: {
-    heading: "I like boobs",
+  {
+    heading: "I like small boobs",
     text: "lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem ",
   },
-  2: {
-    heading: "I like boobs",
+  {
+    heading: "I like perfect boobs",
     text: "lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem ",
   },
-  3: {
-    heading: "I like boobs",
+  {
+    heading: "I like best boobs",
     text: "lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem ",
   },
-};
+];
 const App = (props) => {
   return (
     <div>
