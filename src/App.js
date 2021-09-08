@@ -1,5 +1,7 @@
 import React from "react";
 import Accordion from "./Accordion";
+import CounterExample from "./CounterExample";
+import SearchBar from "./Api";
 // Must be array not
 const items = [
   {
@@ -21,8 +23,10 @@ const items = [
 ];
 const App = (props) => {
   return (
-    <div>
+    <div className="ui text container">
       <Accordion items={items} />
+      <CounterExample />
+      <SearchBar />
     </div>
   );
 };
