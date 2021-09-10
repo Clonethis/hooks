@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Accordion from "./Accordion";
 import CounterExample from "./CounterExample";
 import SearchBar from "./Api";
+import Dropdown from "./Dropdown";
+
 // Must be array not
 const items = [
   {
@@ -21,12 +23,26 @@ const items = [
     text: "lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem ",
   },
 ];
+const options = [
+  { label: "Red Nice", value: "red" },
+  { label: "Blu better", value: "blue" },
+  {
+    label: "Green",
+    value: "green",
+  },
+];
 const App = (props) => {
+  const [selected, setSelected] = useState(options[0]);
   return (
     <div className="ui text container">
       {/* <Accordion items={items} /> */}
       {/* <CounterExample /> */}
-      <SearchBar />
+      {/* <SearchBar /> */}
+      <Dropdown
+        selected={selected}
+        onSelectedChange={setSelected}
+        options={options}
+      />
     </div>
   );
 };

@@ -24,8 +24,6 @@ const SearchBar = () => {
       setResults(data.query.search);
     };
 
-    search();
-
     // different syntax last "()" invokes before function
     // (async () => {
     //   await axios.get(wikiApi);
@@ -35,14 +33,28 @@ const SearchBar = () => {
     // axios.get(wikiApi).then((response) => {
     //   console.log(response.data);
     // });
-    console.log("I am runnig how I want (once)");
+    // console.log("I am runnig how I want (once)");
     //argument after '}' tells when code is executed. Options : []->initial render,...nothing... -> initial r + after every rerender,  [term,...]-> initial r + after every rerender if data has changed
     // axios;
+    // this sets Timer when user start writing, after 500 ms will result in 'search'
+    if (term && !results.length) {
+      search();
+    } else {
+      const timer = setTimeout(() => {
+        if (term) {
+          search();
+        }
+      }, 400);
+      return () => {
+        clearTimeout(timer);
+      };
+    }
   }, [term]);
   // const SearchSubmit = (term) => {
   // term.preventDefault();
   //   console.log(term);
   // };
+
   const renderedResults = results.map((result) => {
     return (
       <div className="item" key={result.pageid}>
