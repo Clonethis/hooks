@@ -24,8 +24,8 @@ const items = [
 const App = (props) => {
   return (
     <div className="ui text container">
-      <Accordion items={items} />
-      <CounterExample />
+      {/* <Accordion items={items} /> */}
+      {/* <CounterExample /> */}
       <SearchBar />
     </div>
   );
