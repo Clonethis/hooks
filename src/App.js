@@ -3,6 +3,7 @@ import Accordion from "./Accordion";
 import CounterExample from "./CounterExample";
 import SearchBar from "./Api";
 import Dropdown from "./Dropdown";
+import Translate from "./Translate";
 
 // Must be array not
 const items = [
@@ -33,16 +34,29 @@ const options = [
 ];
 const App = (props) => {
   const [selected, setSelected] = useState(options[0]);
+  const [show, setShow] = useState(true);
   return (
     <div className="ui text container">
       {/* <Accordion items={items} /> */}
       {/* <CounterExample /> */}
       {/* <SearchBar /> */}
-      <Dropdown
-        selected={selected}
-        onSelectedChange={setSelected}
-        options={options}
-      />
+      <button
+        onClick={() => {
+          setShow(!show);
+        }}
+      >
+        Show or not show
+      </button>
+      {show ? (
+        <Dropdown
+          selected={selected}
+          onSelectedChange={setSelected}
+          options={options}
+        />
+      ) : (
+        ""
+      )}
+      <Translate />
     </div>
   );
 };
