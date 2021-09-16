@@ -32,31 +32,31 @@ const options = [
     value: "green",
   },
 ];
+const showAccordion = () => {
+  if (window.location.pathname === "/") {
+    return <Accordion items={items} />;
+  }
+};
+const showList = () => {
+  if (window.location.pathname === "/list") {
+  }
+};
+
+const showTranslate = () => {
+  if (window.location.pathname === "/translate") {
+  }
+};
+
+const showList = () => {
+  if (window.location.pathname === "/list") {
+  }
+};
 const App = (props) => {
-  const [selected, setSelected] = useState(options[0]);
-  const [show, setShow] = useState(true);
   return (
     <div className="ui text container">
-      {/* <Accordion items={items} /> */}
-      {/* <CounterExample /> */}
-      {/* <SearchBar /> */}
-      <button
-        onClick={() => {
-          setShow(!show);
-        }}
-      >
-        Show or not show
-      </button>
-      {show ? (
-        <Dropdown
-          selected={selected}
-          onSelectedChange={setSelected}
-          options={options}
-        />
-      ) : (
-        ""
-      )}
-      <Translate />
+      {/* <Translate /> */}
+      {showAccordion()}
+      {/* <Fetcher /> */}
     </div>
   );
 };

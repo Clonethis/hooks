@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 //Done Todo needs to close down after clicking outside of dropdown
 // todo needs text responsive to selection
-const Dropdown = ({ options, selected, onSelectedChange }) => {
+const Dropdown = ({ label, options, selected, onSelectedChange }) => {
   const [open, setOpen] = useState(false);
   const ref = useRef();
   useEffect(() => {
@@ -18,9 +18,7 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
     document.body.addEventListener("click", onBodyClick, { capture: true });
     // cleaning event listener, when not needed (in case of removing 'Dropdown')
     return () => {
-      document.body.removeEventListener("click", onBodyClick, {
-        capture: false,
-      });
+      document.body.removeEventListener("click", onBodyClick);
     };
   }, []);
   const renderedOptions = options.map((option) => {
@@ -46,7 +44,7 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
     <div>
       <div ref={ref} className="ui form">
         <div className="field">
-          <div className="label">Select Color</div>
+          <div className="label">{label}</div>
 
           <div
             onClick={() => {
