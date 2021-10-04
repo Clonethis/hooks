@@ -1,6 +1,17 @@
 import React from "react";
 import ReactDom from "react-dom";
-// for default hooks & routes app
+
+import { Provider } from "react-redux";
+import { createStore } from "redux";
 import App from "./App";
-// also could be used with <Redux/> component
-ReactDom.render(<App />, document.getElementById("root"));
+
+import reducers from "./Components/Redux/app/reducers";
+import ReactRedux from "./Components/Redux/app/ReactRedux";
+// also could be used with <ReactRedux/>or <App/> component
+ReactDom.render(
+  // passing all data to provider -> above app
+  <Provider store={createStore(reducers)}>
+    <ReactRedux />
+  </Provider>,
+  document.getElementById("root")
+);

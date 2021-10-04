@@ -62,3 +62,23 @@ const policyDepartment = (listOfPolicies = [], action) => {
   }
   return listOfPolicies;
 };
+
+
+// now working with Redux
+const {createStore,combineReducers}=Redux;
+const ourDepartments = combineReducers(
+  {
+    accounting:accounting,
+    claimsHistory:claimsHistory,
+    policyDepartment:policyDepartment,
+  }
+),
+const store = createStore(ourDepartments)
+const action = createPolicy('Alex',20 )
+
+// absolute overkill -> when working with data just pre-create functions that will do 
+// something and then it will store states of the app
+
+// this will pass data to according parts of app
+store.dispatch(action)
+console.log(store.getState())

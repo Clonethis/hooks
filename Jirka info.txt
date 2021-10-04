@@ -20,3 +20,14 @@ dispatch -> copies object and pass to reducers
 Reducers -> separate own data - process data diferrently then other Reducers -> when return data send to State
 State -> central repository -> everything can easily acces State
 * modelling insurance company
+
+4.10.2021
+-> 230 + 
+--> completely different setup than with react -> more complex but with bigger app it makes much more sense
+index.js in -> src\Components\Redux\app\actions  ->
+because more usability with Redux..
+
+! also need to : npm install redux react-redux -> for installing redux
+for exporting default redux components -> export default connect()(SongList);
+-- two parenteses due to first calling function and second invoking called function -> Calling 'connect' and
+calling 'SongList' => Function in function
