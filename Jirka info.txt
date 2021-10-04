@@ -1,0 +1,22 @@
+1.10.2021
+-13 finished -> 204 +
+
+! return to 14... refactoring YT app using routes or whatever
+// depolyment of react app using vercel -> vercel.com
+// netlify -> more features  -> is used with git -> more responsive web development, easy changing of versions
+
+Redux 
+- is like policy maker
+- takes claims from customers and after keen look on claim by each deparment (they will decide, if they want to do something
+with the policy or nothing)
+some analogy with insurance company ->
+Person dropping off a form -> form -> form receiver -> departments ->compiled department data(usefull data after work done)
+in Redux
+action creator->action->dispatch->Reducers->State
+
+-action creator -> create form
+-action -> describes changes that need to be made
+dispatch -> copies object and pass to reducers
+Reducers -> separate own data - process data diferrently then other Reducers -> when return data send to State
+State -> central repository -> everything can easily acces State
+* modelling insurance company

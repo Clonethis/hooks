@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import Header from "./Header";
-import Accordion from "./Accordion";
-import CounterExample from "./CounterExample";
-import SearchBar from "./Api";
-import Dropdown from "./Dropdown";
-import Translate from "./Translate";
-import Route from "./Route";
+import Header from "./Components/UI/Header";
+import Accordion from "./Components/UI/Accordion";
+// import CounterExample from "./Components/exercises(notimportant/CounterExample";
+import SearchBar from "./Components/Backend/Api";
+import Dropdown from "./Components/UI/Dropdown";
+import Translate from "./Components/UI/Translate";
+import Route from "./Components/Backend/Route";
 
 // Must be array not
 const items = [
@@ -58,12 +58,14 @@ const options = [
 //   }
 // };
 const App = (props) => {
+  // setting useState for Dropdown...
   const [selected, setSelected] = useState(options[0]);
   return (
     <div className="ui text container">
       <Header />
       {/* <Translate /> */}
       <Route path="/">
+        {/* 'SearchBar' is passed to ROUTE as child-component */}
         <SearchBar />
       </Route>
       <Route path="/acc">
